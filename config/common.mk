@@ -168,7 +168,8 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     Updater \
     WallpaperPicker \
-    WeatherProvider
+    WeatherProvider \
+    Gallery2
 
 # Custom AICP packages
 PRODUCT_PACKAGES += \
