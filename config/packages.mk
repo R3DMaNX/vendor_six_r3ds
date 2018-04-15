@@ -1,6 +1,6 @@
 # Packages
-#PRODUCT_PACKAGES += \
-#    Turbo
+PRODUCT_PACKAGES += \
+    Eleven
 
 # Overlays
 PRODUCT_PACKAGES += \
