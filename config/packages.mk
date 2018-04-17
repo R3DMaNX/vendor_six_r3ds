@@ -1,6 +1,7 @@
 # Packages
 PRODUCT_PACKAGES += \
-    Eleven
+    Eleven \
+    EggGame
 
 # Overlays
 PRODUCT_PACKAGES += \
