@@ -1,3 +1,3 @@
-add_lunch_combo du_shamu-userdebug
-add_lunch_combo du_walleye-userdebug
+add_lunch_combo nephilim_shamu-userdebug
+add_lunch_combo nephilim_walleye-userdebug
 

@@ -1,26 +1,23 @@
+# Version information used on all builds
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_ID=OPM2.171019.029 BUILD_DISPLAY_ID=OPM2.171019.029 BUILD_UTC_DATE=$(shell date +"%s")
+
 # Versioning System
-DU_BASE_VERSION = v12.1
+NEPHILIM_BASE_VERSION = v3.0
 
-ifndef DU_BUILD_TYPE
-    DU_BUILD_TYPE := R3Ds
-endif
-
-# Only include DU-Updater for official, weeklies, and rc builds
-ifeq ($(filter-out OFFICIAL WEEKLIES RC,$(DU_BUILD_TYPE)),)
-    PRODUCT_PACKAGES += \
-        DU-Updater
+ifndef NEPHILIM_BUILD_TYPE
+    NEPHILIM_BUILD_TYPE := R3Ds
 endif
 
 # Sign builds if building an official or weekly build
-ifeq ($(filter-out OFFICIAL WEEKLIES,$(DU_BUILD_TYPE)),)
+ifeq ($(filter-out OFFICIAL WEEKLIES,$(NEPHILIM_BUILD_TYPE)),)
     PRODUCT_DEFAULT_DEV_CERTIFICATE := ../.keys/releasekey
 endif
 
 # Set all versions
 DATE := $(shell date -u +%Y%m%d)
-DU_VERSION := $(TARGET_PRODUCT)-$(DU_BASE_VERSION)-$(DATE)-$(shell date -u +%H%M)-$(DU_BUILD_TYPE)
+NEPHILIM_VERSION := $(TARGET_PRODUCT)-$(NEPHILIM_BASE_VERSION)-$(DATE)-$(NEPHILIM_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.du.version=$(DU_VERSION) \
-    ro.mod.version=$(DU_BUILD_TYPE)-$(DU_BASE_VERSION)-$(DATE)
+    ro.nephilim.version=$(NEPHILIM_VERSION) \
+    ro.mod.version=$(NEPHILIM_BUILD_TYPE)-$(NEPHILIM_BASE_VERSION)-$(DATE)

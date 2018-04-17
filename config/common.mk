@@ -24,60 +24,62 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/du/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/nephilim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/nephilim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Init file
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/init.local.rc:root/init.du.rc
+    vendor/nephilim/prebuilt/common/etc/init.local.rc:root/init.du.rc
 
 # LatinIME gesture typing
 ifneq ($(filter tenderloin,$(TARGET_PRODUCT)),)
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/du/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/nephilim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/nephilim/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/du/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    vendor/nephilim/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/nephilim/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
 endif
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/nephilim/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/mkshrc:system/etc/mkshrc
+    vendor/nephilim/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
 # Charging sounds
 PRODUCT_COPY_FILES += \
-    vendor/du/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
-    vendor/du/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
+    vendor/nephilim/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
+    vendor/nephilim/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/extras/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/extras/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/extras/tools/50-du.sh:system/addon.d/50-du.sh
+    vendor/extras/tools/50-nephilim.sh:system/addon.d/50-nephilim.sh
 
 # Clean cache
 PRODUCT_COPY_FILES += \
     vendor/extras/tools/clean_cache.sh:system/bin/clean_cache.sh
 
 # Packages
-include vendor/du/config/packages.mk
+include vendor/nephilim/config/packages.mk
 
 # Branding
-include vendor/du/config/branding.mk
+include vendor/nephilim/config/branding.mk
 
 # Bootanimation
-include vendor/du/config/bootanimation.mk
+include vendor/nephilim/config/bootanimation.mk
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/du/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/nephilim/overlay/common
 
 # Google sounds
-include vendor/du/google/GoogleAudio.mk
+include vendor/nephilim/google/GoogleAudio.mk
+
+$(call inherit-product-if-exists, vendor/nephilim/prebuilt/common/prebuilt.mk)
