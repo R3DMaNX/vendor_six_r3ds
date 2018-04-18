@@ -23,12 +23,11 @@
 
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_default" translatable="false">
-        wifi,cell,battery,dnd,flashlight,rotation,bt,airplane,location
+        wifi,cell,battery,dnd,flashlight,lte,bt,airplane,location
     </string>
 
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
-    <string name="quick_settings_tiles_stock" translatable="false">
-        wifi,cell,battery,dnd,flashlight,rotation,bt,airplane,location,caffeine,cast,hotspot,inversion,nfc,night,reboot,saver,screenshot,work,navigation,theme
+    <string name="quick_settings_tiles_stock" translatable="false"> wifi,cell,battery,dnd,flashlight,rotation,bt,airplane,location,hotspot,inversion,saver,work,cast,night,ambient,sound,volume,nfc,sync,compass,music,expanded_desktop,cpuinfo,lte,smartpixels,caffeine,navigation,screenshot
     </string>
 
 </resources>
