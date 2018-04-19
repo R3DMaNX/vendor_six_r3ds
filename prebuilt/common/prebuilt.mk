@@ -15,6 +15,5 @@
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
     EggGame \
-    Markup \
-    SiXPenguins
+    Markup
 
