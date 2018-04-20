@@ -1,6 +1,7 @@
 # Packages
 PRODUCT_PACKAGES += \
-    Eleven
+    Eleven \
+    OmniJaws
 
 # Overlays
 PRODUCT_PACKAGES += \
