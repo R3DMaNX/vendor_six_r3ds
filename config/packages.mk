@@ -2,7 +2,8 @@
 PRODUCT_PACKAGES += \
     Eleven \
     OmniJaws \
-    OmniSwitch
+    OmniSwitch \
+    OmniStyle
 
 # Overlays
 PRODUCT_PACKAGES += \
