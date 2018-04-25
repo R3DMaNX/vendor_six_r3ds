@@ -16,5 +16,6 @@
 PRODUCT_PACKAGES += \
     EggGame \
     Markup \
-    Substratum
+    Substratum \
+    Renown
 
