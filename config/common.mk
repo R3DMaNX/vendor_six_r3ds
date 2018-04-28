@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
 
 # Init file
 PRODUCT_COPY_FILES += \
-    vendor/nephilim/prebuilt/common/etc/init.local.rc:root/init.du.rc
+    vendor/nephilim/prebuilt/common/etc/init.local.rc:root/init.six.rc
 
 # LatinIME gesture typing
 ifneq ($(filter tenderloin,$(TARGET_PRODUCT)),)
