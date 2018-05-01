@@ -17,5 +17,5 @@ PRODUCT_PACKAGES += \
     EggGame \
     Markup \
     Substratum \
-    Renown
+    SiXPenguins
 
