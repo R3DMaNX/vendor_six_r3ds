@@ -16,10 +16,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1
 
-# Default notification/alarm sounds
+# Default ringtone/notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
+    ro.config.notification_sound=AlarmedSputter.ogg \
+    ro.config.alarm_alert=Scream.ogg \
+    ro.config.ringtone=R2D2Ring.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
