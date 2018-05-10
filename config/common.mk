@@ -174,7 +174,8 @@ PRODUCT_PACKAGES += \
 
 # Custom AICP packages
 PRODUCT_PACKAGES += \
-    AicpExtras
+    AicpExtras \
+    SixOTA
 
 # Exchange support
 PRODUCT_PACKAGES += \
