@@ -3,7 +3,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     OmniJaws \
     OmniSwitch \
-    OmniStyle
+    OmniStyle \
+    SixOTA
 
 # Overlays
 PRODUCT_PACKAGES += \
