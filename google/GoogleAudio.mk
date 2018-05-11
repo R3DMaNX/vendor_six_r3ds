@@ -46,6 +46,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alarms/Sway.ogg:system/media/audio/alarms/Sway.ogg \
     $(LOCAL_PATH)/alarms/Timer.ogg:system/media/audio/alarms/Timer.ogg \
     $(LOCAL_PATH)/alarms/Wag.ogg:system/media/audio/alarms/Wag.ogg \
+    $(LOCAL_PATH)/alarms/Scream.ogg:system/media/audio/alarms/Scream.ogg \
     $(LOCAL_PATH)/effects/audio_end.ogg:system/media/audio/ui/audio_end.ogg \
     $(LOCAL_PATH)/effects/audio_initiate.ogg:system/media/audio/ui/audio_initiate.ogg \
     $(LOCAL_PATH)/effects/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
@@ -104,6 +105,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/notifications/Tuneup.ogg:system/media/audio/notifications/Tuneup.ogg \
     $(LOCAL_PATH)/notifications/Tweeter.ogg:system/media/audio/notifications/Tweeter.ogg \
     $(LOCAL_PATH)/notifications/Twinkle.ogg:system/media/audio/notifications/Twinkle.ogg \
+    $(LOCAL_PATH)/notifications/AlarmedSputter.ogg:system/media/audio/notifications/AlarmedSputter.ogg \
     $(LOCAL_PATH)/ringtones/Atria.ogg:system/media/audio/ringtones/Atria.ogg \
     $(LOCAL_PATH)/ringtones/Beats.ogg:system/media/audio/ringtones/Beats.ogg \
     $(LOCAL_PATH)/ringtones/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
@@ -136,8 +138,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ringtones/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(LOCAL_PATH)/ringtones/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg \
     $(LOCAL_PATH)/ringtones/Zen.ogg:system/media/audio/ringtones/Zen.ogg \
-    $(LOCAL_PATH)/ringtones/Zen_too.ogg:system/media/audio/ringtones/Zen_too.ogg
+    $(LOCAL_PATH)/ringtones/Zen_too.ogg:system/media/audio/ringtones/Zen_too.ogg \
+    $(LOCAL_PATH)/ringtones/R2D2Ring.ogg:system/media/audio/ringtones/R2D2Ring.ogg
 
 PRODUCT_PROPERTY_OVERRIDES += \
-   ro.config.ringtone=Zen_too.ogg \
-   ro.config.notification_sound=Chime.ogg
+   ro.config.ringtone=R2D2Ring.ogg \
+   ro.config.alarm_alert=Scream.ogg \
+   ro.config.notification_sound=AlarmedSputter.ogg
