@@ -17,7 +17,5 @@ PRODUCT_PACKAGES += \
     EggGame \
     Markup \
     Substratum \
-    SiXPenguins \
-    WundergroundWeatherProvider \
-    YahooWeatherProvider
+    SiXPenguins
 
