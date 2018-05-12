@@ -4,7 +4,11 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OmniSwitch \
     OmniStyle \
-    SixOTA
+    SixOTA \
+    Trebuchet \
+    WeatherProvider \
+    LockClock \
+    Recorder
 
 # Overlays
 PRODUCT_PACKAGES += \
