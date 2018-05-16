@@ -23,6 +23,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     ro.build.selinux=1
 
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
 PRODUCT_COPY_FILES += \
     vendor/nephilim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/nephilim/prebuilt/common/bin/sysinit:system/bin/sysinit
