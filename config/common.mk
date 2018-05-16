@@ -27,6 +27,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
+# SiX prop edits
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.verified=true \
+    ro.telephony.call_ring.delay=0 \
+    ring.delay=0 \
+    drm.service.enabled=true
+
 PRODUCT_COPY_FILES += \
     vendor/nephilim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/nephilim/prebuilt/common/bin/sysinit:system/bin/sysinit
