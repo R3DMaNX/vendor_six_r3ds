@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OmniSwitch \
     OmniStyle \
-    SixOTA
+    SixOTA \
+    Calendar
 
 # Overlays
 PRODUCT_PACKAGES += \
