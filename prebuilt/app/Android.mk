@@ -15,6 +15,15 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := Markup
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := Markup/Markup.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := YahooWeather
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := YahooWeather/YahooWeather.apk

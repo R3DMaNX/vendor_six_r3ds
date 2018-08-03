@@ -14,5 +14,6 @@
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
+    Markup \
     YahooWeather \
     WundergroundWeather
