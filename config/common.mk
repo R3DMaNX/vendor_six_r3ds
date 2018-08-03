@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
     LineageGreenAccent \
     LineageGreyAccent \
     LineageOrangeAccent \
-		LineageOxygenAccent \
+    LineageOxygenAccent \
     LineagePinkAccent \
     LineagePurpleAccent \
     LineageTealAccent \
@@ -299,3 +299,5 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
+
+$(call inherit-product-if-exists, vendor/aicp/prebuilt/prebuilt.mk)
