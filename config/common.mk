@@ -282,10 +282,10 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 -include vendor/aicp/config/version.mk
 
 # AICP OTA
-ifneq ($(AICP_BUILDTYPE),UNOFFICIAL)
-PRODUCT_PACKAGES +=  \
-   AICP_OTA
-endif
+#ifneq ($(AICP_BUILDTYPE),UNOFFICIAL)
+#PRODUCT_PACKAGES +=  \
+#   AICP_OTA
+#endif
 
 # Omni Packages
 PRODUCT_PACKAGES += \
