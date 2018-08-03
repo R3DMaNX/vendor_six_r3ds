@@ -1,13 +1,13 @@
 # AICP System Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.modversion=$(AICP_VERSION) \
-    ro.aicp.version=$(VERSION)-$(AICP_BUILDTYPE) \
-    ro.aicp.version.update=$(AICP_BRANCH)-$(VERSION)
+    ro.aicp.version=$(AICP_VERSION) \
+    ro.aicp.version.update=$(AICP_VERSION)
 
 # AICP Statistics
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.aicp.branch=$(AICP_BRANCH) \
-    ro.romstats.url=http://stats.aicp-rom.com/ \
+    ro.romstats.url=https://notinuseplaceholder.c0m/ \
     ro.romstats.name=AICP \
     ro.romstats.buildtype=$(AICP_BUILDTYPE) \
     ro.romstats.version=$(VERSION) \
