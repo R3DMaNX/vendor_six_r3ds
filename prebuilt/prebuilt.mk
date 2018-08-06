@@ -14,6 +14,9 @@
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
+    EggGame \
+    Substratum \
     Markup \
+    SiXPenguins \
     YahooWeather \
     WundergroundWeather

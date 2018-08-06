@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= AICP
+PRODUCT_BRAND ?= SIX
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -44,7 +44,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/aicp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/aicp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aicp/prebuilt/common/bin/50-aicp.sh:system/addon.d/50-aicp.sh \
+    vendor/aicp/prebuilt/common/bin/50-six.sh:system/addon.d/50-six.sh \
     vendor/aicp/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Backup Services whitelist
@@ -86,13 +86,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is AICP!
+# This is SIX
 PRODUCT_COPY_FILES += \
     vendor/aicp/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml \
     vendor/aicp/config/permissions/privapp-permissions-lineage.xml:system/etc/permissions/privapp-permissions-lineage.xml
 
-# Include AICP audio files
-include vendor/aicp/config/aicp_audio.mk
+# Include SIX audio files
+include vendor/aicp/config/six_audio.mk
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
@@ -165,16 +165,14 @@ PRODUCT_PACKAGES += \
     Eleven \
     ExactCalculator \
     Jelly \
-    LockClock \
-    Trebuchet \
-    Updater \
+    Launcher3 \
     WallpaperPicker \
     WeatherProvider \
     Gallery2
 
-# Custom AICP packages
+# Custom SIX packages
 PRODUCT_PACKAGES += \
-    AicpExtras \
+    SixSettings \
     SixOTA
 
 # Exchange support
@@ -242,11 +240,11 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Custom off-mode charger
-ifeq ($(WITH_AICP_CHARGER),true)
+ifeq ($(WITH_SIX_CHARGER),true)
 PRODUCT_PACKAGES += \
     lineage_charger_res_images \
     font_log.png \
-    libhealthd.aicp
+    libhealthd.six
 endif
 
 # Filesystems tools
@@ -308,14 +306,8 @@ DEVICE_PACKAGE_OVERLAYS += vendor/aicp/overlay/common
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
 
-# AICP Versioning
+# SIX Versioning
 -include vendor/aicp/config/version.mk
-
-# AICP OTA
-#ifneq ($(AICP_BUILDTYPE),UNOFFICIAL)
-#PRODUCT_PACKAGES +=  \
-#   AICP_OTA
-#endif
 
 # Omni Packages
 PRODUCT_PACKAGES += \
@@ -331,3 +323,9 @@ PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 
 $(call inherit-product-if-exists, vendor/aicp/prebuilt/prebuilt.mk)
+
+# Miracast Support
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
+

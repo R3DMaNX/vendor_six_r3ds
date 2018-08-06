@@ -155,7 +155,7 @@ def is_in_manifest(projectpath):
 
     # ... and don't forget the aicp snippet
     try:
-        lm = ElementTree.parse(".repo/manifests/snippets/aicp.xml")
+        lm = ElementTree.parse(".repo/manifests/snippets/six.xml")
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")

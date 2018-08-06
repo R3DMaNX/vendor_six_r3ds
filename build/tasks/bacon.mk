@@ -14,12 +14,12 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# AICP OTA update package
+# SIX OTA update package
 
-AICP_TARGET_PACKAGE := $(PRODUCT_OUT)/$(AICP_VERSION).zip
+SIX_TARGET_PACKAGE := $(PRODUCT_OUT)/$(SIX_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AICP_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(AICP_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(AICP_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(AICP_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SIX_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(SIX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SIX_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(SIX_TARGET_PACKAGE)" >&2

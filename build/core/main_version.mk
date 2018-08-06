@@ -1,15 +1,15 @@
-# AICP System Version
+# SIX System Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.modversion=$(AICP_VERSION) \
-    ro.aicp.version=$(AICP_VERSION) \
-    ro.aicp.version.update=$(AICP_VERSION)
+    ro.modversion=$(SIX_VERSION) \
+    ro.six.version=$(SIX_VERSION) \
+    ro.six.version.update=$(SIX_VERSION)
 
-# AICP Statistics
+# SIX Statistics
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.aicp.branch=$(AICP_BRANCH) \
+    ro.six.branch=$(SIX_BRANCH) \
     ro.romstats.url=https://notinuseplaceholder.c0m/ \
-    ro.romstats.name=AICP \
-    ro.romstats.buildtype=$(AICP_BUILDTYPE) \
+    ro.romstats.name=SIX \
+    ro.romstats.buildtype=$(SIX_BUILDTYPE) \
     ro.romstats.version=$(VERSION) \
     ro.romstats.tframe=1 \
     ro.romstats.askfirst=1 \

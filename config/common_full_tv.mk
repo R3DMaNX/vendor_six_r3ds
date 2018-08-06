@@ -1,4 +1,4 @@
-# Inherit full common AICP stuff
+# Inherit full common SIX stuff
 $(call inherit-product, vendor/aicp/config/common_full.mk)
 
 PRODUCT_PACKAGES += AppDrawer

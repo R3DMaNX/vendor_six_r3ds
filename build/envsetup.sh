@@ -1,6 +1,6 @@
-function __print_aicp_functions_help() {
+function __print_six_functions_help() {
 cat <<EOF
-Additional AICP functions:
+Additional SIX functions:
 - cout:            Changes directory to out.
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
@@ -79,7 +79,7 @@ function breakfast()
 {
     target=$1
     local variant=$2
-    AICP_DEVICES_ONLY="true"
+    SIX_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
     for f in `/bin/ls vendor/aicp/vendorsetup.sh 2> /dev/null`
@@ -98,12 +98,12 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the AICP model name
+            # This is probably just the SIX model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
 
-            lunch aicp_$target-$variant
+            lunch six_$target-$variant
         fi
     fi
     return $?
@@ -114,8 +114,8 @@ alias bib=breakfast
 function eat()
 {
     if [ "$OUT" ] ; then
-        MODVERSION=$(get_build_var AICP_VERSION)
-        ZIPFILE=aicp-$MODVERSION.zip
+        MODVERSION=$(get_build_var SIX_VERSION)
+        ZIPFILE=six-$MODVERSION.zip
         ZIPPATH=$OUT/$ZIPFILE
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
@@ -130,7 +130,7 @@ function eat()
             done
             echo "Device Found.."
         fi
-        if (adb shell getprop ro.aicp.device | grep -q "$AICP_BUILD"); then
+        if (adb shell getprop ro.six.device | grep -q "$SIX_BUILD"); then
             # if adbd isn't root we can't write to /cache/recovery/
             adb root
             sleep 1
@@ -146,7 +146,7 @@ EOF
             fi
             rm /tmp/command
         else
-            echo "The connected device does not appear to be $AICP_BUILD, run away!"
+            echo "The connected device does not appear to be $SIX_BUILD, run away!"
         fi
         return $?
     else
@@ -386,7 +386,7 @@ function installboot()
     sleep 1
     adb wait-for-online shell mount /system 2>&1 > /dev/null
     adb wait-for-online remount
-    if (adb shell getprop ro.aicp.device | grep -q "$AICP_BUILD");
+    if (adb shell getprop ro.six.device | grep -q "$SIX_BUILD");
     then
         adb push $OUT/boot.img /cache/
         if [ -e "$OUT/system/lib/modules/*" ];
@@ -401,7 +401,7 @@ function installboot()
         adb shell rm -rf /cache/boot.img
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $AICP_BUILD, run away!"
+        echo "The connected device does not appear to be $SIX_BUILD, run away!"
     fi
 }
 
@@ -435,14 +435,14 @@ function installrecovery()
     sleep 1
     adb wait-for-online shell mount /system 2>&1 >> /dev/null
     adb wait-for-online remount
-    if (adb shell getprop ro.aicp.device | grep -q "$AICP_BUILD");
+    if (adb shell getprop ro.six.device | grep -q "$SIX_BUILD");
     then
         adb push $OUT/recovery.img /cache/
         adb shell dd if=/cache/recovery.img of=$PARTITION
         adb shell rm -rf /cache/recovery.img
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $AICP_BUILD, run away!"
+        echo "The connected device does not appear to be $SIX_BUILD, run away!"
     fi
 }
 
@@ -820,7 +820,7 @@ function dopush()
         echo "Device Found."
     fi
 
-    if (adb shell getprop ro.aicp.device | grep -q "$AICP_BUILD") || [ "$FORCE_PUSH" = "true" ];
+    if (adb shell getprop ro.six.device | grep -q "$SIX_BUILD") || [ "$FORCE_PUSH" = "true" ];
     then
     # retrieve IP and PORT info if we're using a TCP connection
     TCPIPPORT=$(adb devices \
@@ -938,7 +938,7 @@ EOF
     rm -f $OUT/.log
     return 0
     else
-        echo "The connected device does not appear to be $AICP_BUILD, run away!"
+        echo "The connected device does not appear to be $SIX_BUILD, run away!"
     fi
 }
 
@@ -957,7 +957,7 @@ function repopick() {
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
-    if [ ! -z $AICP_FIXUP_COMMON_OUT ]; then
+    if [ ! -z $SIX_FIXUP_COMMON_OUT ]; then
         if [ -d ${common_out_dir} ] && [ ! -L ${common_out_dir} ]; then
             mv ${common_out_dir} ${common_out_dir}-${target_device}
             ln -s ${common_out_dir}-${target_device} ${common_out_dir}

@@ -1,4 +1,4 @@
-# Inherit common AICP stuff
+# Inherit common SIX stuff
 $(call inherit-product, vendor/aicp/config/common.mk)
 
 PRODUCT_SIZE := full
