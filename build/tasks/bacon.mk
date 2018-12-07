@@ -14,13 +14,13 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Havoc OTA update package
+# SIX OTA update package
 
-HAVOC_TARGET_PACKAGE := $(PRODUCT_OUT)/$(HAVOC_VERSION).zip
+SIX_TARGET_PACKAGE := $(PRODUCT_OUT)/$(SIX_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(HAVOC_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(HAVOC_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(HAVOC_TARGET_PACKAGE).md5sum
-	$(hide) ./vendor/havoc/tools/generate_json_build_info.sh $(HAVOC_TARGET_PACKAGE)
-	@echo "Package Complete: $(HAVOC_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SIX_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(SIX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SIX_TARGET_PACKAGE).md5sum
+	$(hide) ./vendor/six/tools/generate_json_build_info.sh $(SIX_TARGET_PACKAGE)
+	@echo "Package Complete: $(SIX_TARGET_PACKAGE)" >&2

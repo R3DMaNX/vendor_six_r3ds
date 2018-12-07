@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func havocExpandVariables(ctx android.ModuleContext, in string) string {
-	havocVars := ctx.Config().VendorConfig("havocVarsPlugin")
+func sixExpandVariables(ctx android.ModuleContext, in string) string {
+	sixVars := ctx.Config().VendorConfig("sixVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if havocVars.IsSet(name) {
-			return havocVars.String(name), nil
+		if sixVars.IsSet(name) {
+			return sixVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

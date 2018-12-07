@@ -12,9 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_x86.mk)
-$(call inherit-product, vendor/havoc/config/common.mk)
+$(call inherit-product, build/target/product/aosp_arm64.mk)
+$(call inherit-product, vendor/six/config/common.mk)
 
-TARGET_USES_64_BIT_BINDER := true
-
-PRODUCT_NAME := havoc_x86
+PRODUCT_NAME := six_arm64

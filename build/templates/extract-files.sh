@@ -25,9 +25,9 @@ VENDOR=*** FILL IN VENDOR ****
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-HAVOC_ROOT="$MY_DIR"/../../..
+SIX_ROOT="$MY_DIR"/../../..
 
-HELPER="$HAVOC_ROOT"/vendor/havoc/build/tools/extract_utils.sh
+HELPER="$SIX_ROOT"/vendor/six/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -56,7 +56,7 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$SIX_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 

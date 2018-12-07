@@ -27,9 +27,9 @@ INITIAL_COPYRIGHT_YEAR=**** FILL IN COPYRIGHT YEAR ****
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-HAVOC_ROOT="$MY_DIR"/../../..
+SIX_ROOT="$MY_DIR"/../../..
 
-HELPER="$HAVOC_ROOT"/vendor/havoc/build/tools/extract_utils.sh
+HELPER="$SIX_ROOT"/vendor/six/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -37,7 +37,7 @@ fi
 . "$HELPER"
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$SIX_ROOT"
 
 # Copyright headers and guards
 write_headers

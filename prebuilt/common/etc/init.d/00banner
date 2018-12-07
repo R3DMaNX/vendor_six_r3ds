@@ -2,18 +2,10 @@
 #
 # Print startup info
 #
-L="log -p i -t havoc"
+L="log -p i -t six"
 
 $L "**********************************************" 
-$L "                                              " 
-$L "      dMP dMP .aMMMb  dMP dMP .aMMMb  .aMMMb  " 
-$L "     dMP dMP dMP'dMP dMP dMP dMP'dMP dMP'VMP  " 
-$L "    dMMMMMP dMMMMMP dMP dMP dMP dMP dMP       " 
-$L "   dMP dMP dMP dMP  YMvAP' cMP.aMP dMP.aMP    " 
-$L "  dMP dMP dMP dMP    VP'   VMMMP'  VMMMP'     " 
-$L "                                              " 
-$L "**********************************************" 
 $L "*************** Android 9.0 Pie **************" 
-$L "************* Welcome to Havoc-OS ************" 
+$L "************* Welcome to SiX ROM *************" 
 $L "**********************************************" 
-$L `getprop ro.build.version.release` / Havoc-OS-`getprop ro.havoc.version`";
+$L `getprop ro.build.version.release` / sixrom-`getprop ro.six.version`";

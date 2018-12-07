@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= Havoc-OS
+PRODUCT_BRAND ?= Six
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -61,32 +61,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/havoc/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/havoc/prebuilt/common/bin/50-havoc.sh:system/addon.d/50-havoc.sh
+    vendor/six/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/six/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/six/prebuilt/common/bin/50-six.sh:system/addon.d/50-six.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/havoc/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/havoc/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/six/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/six/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/six/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/havoc/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/six/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
+    vendor/six/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
-# Copy all Havoc-specific init rc files
+# Copy all six-specific init rc files
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/init.local.rc:root/init.havoc.rc
+    vendor/six/prebuilt/common/etc/init.local.rc:root/init.six.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/six/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -94,11 +94,11 @@ PRODUCT_COPY_FILES += \
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/sensitive_pn.xml:system/etc/sensitive_pn.xml
+    vendor/six/prebuilt/common/etc/sensitive_pn.xml:system/etc/sensitive_pn.xml
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/six/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
@@ -106,7 +106,7 @@ PRODUCT_COPY_FILES += \
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/six/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
@@ -116,14 +116,14 @@ PRODUCT_PACKAGES += \
 # Latin IME lib
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-    vendor/havoc/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    vendor/six/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+    vendor/six/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/six/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
-# Havoc Packages
+# SiX Packages
 PRODUCT_PACKAGES += \
     Calculator \
     DeskClock \
@@ -137,14 +137,14 @@ PRODUCT_PACKAGES += \
     WallpaperPickerGooglePrebuilt \
     WeatherProvider
 
-# Fonts
+# Custom Fonts
 PRODUCT_PACKAGES += \
     Havoc-Fonts
 
 # WeatherProvider
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
-    vendor/havoc/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
+    vendor/six/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
+    vendor/six/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
 
 # Ambient Play
 PRODUCT_PACKAGES += \
@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
 
 # Substratum Key
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/priv-app/SubstratumKey.apk:system/priv-app/SubstratumKey/SubstratumKey.apk
+    vendor/six/prebuilt/common/priv-app/SubstratumKey.apk:system/priv-app/SubstratumKey/SubstratumKey.apk
 	
 # Themes
 PRODUCT_PACKAGES += \
@@ -265,14 +265,14 @@ PRODUCT_PACKAGES += \
 
 # Sysconfig
 PRODUCT_COPY_FILES += \
-    vendor/havoc/prebuilt/common/etc/sysconfig/google-hiddenapi-package-whitelist.xml:system/etc/sysconfig/google-hiddenapi-package-whitelist.xml \
-    vendor/havoc/prebuilt/common/etc/sysconfig/pixel.xml:system/etc/sysconfig/pixel.xml
+    vendor/six/prebuilt/common/etc/sysconfig/google-hiddenapi-package-whitelist.xml:system/etc/sysconfig/google-hiddenapi-package-whitelist.xml \
+    vendor/six/prebuilt/common/etc/sysconfig/pixel.xml:system/etc/sysconfig/pixel.xml
 
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
 
-# Extra tools in Havoc
+# Extra tools in six
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -295,11 +295,11 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Custom off-mode charger
-ifeq ($(WITH_HAVOC_CHARGER),true)
+ifeq ($(WITH_SIX_CHARGER),true)
 PRODUCT_PACKAGES += \
-    havoc_charger_res_images \
+    six_charger_res_images \
     font_log.png \
-    libhealthd.havoc
+    libhealthd.six
 endif
 
 # Filesystems tools
@@ -341,11 +341,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/havoc/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/havoc/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/six/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/six/overlay/common
 
 # Bootanimation
-include vendor/havoc/config/bootanimation.mk
+include vendor/six/config/bootanimation.mk
 
 # Version
-include vendor/havoc/config/version.mk
+include vendor/six/config/version.mk

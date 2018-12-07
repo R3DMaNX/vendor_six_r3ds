@@ -10,13 +10,13 @@ EXPORT_TO_SOONG := \
 # Documentation here:
 # https://github.com/Havoc-OS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
-SOONG_CONFIG_NAMESPACES += havocVarsPlugin
+SOONG_CONFIG_NAMESPACES += sixVarsPlugin
 
-SOONG_CONFIG_havocVarsPlugin :=
+SOONG_CONFIG_sixVarsPlugin :=
 
 define addVar
-  SOONG_CONFIG_havocVarsPlugin += $(1)
-  SOONG_CONFIG_havocVarsPlugin_$(1) := $$(subst ",\",$$($1))
+  SOONG_CONFIG_sixVarsPlugin += $(1)
+  SOONG_CONFIG_sixVarsPlugin_$(1) := $$(subst ",\",$$($1))
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
