@@ -14,12 +14,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.setupwizard.network_required=false \
     ro.setupwizard.gservices_delay=-1 \
     ro.com.android.dataroaming=false \
-    drm.service.enabled=true \
-    net.tethering.noprovisioning=true \
     ro.adb.secure=0 \
     ro.build.selinux=1 \
     ro.setupwizard.rotation_locked=true \
-    ro.opa.eligible_device=true \
     persist.sys.disable_rescue=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
@@ -32,9 +29,18 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES := \
     persist.sys.wfd.nohdcp=1 \
     persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
+
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
+# SiX prop edits
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.verified=true \
+    ro.telephony.call_ring.delay=0 \
+    ring.delay=0 \
+    drm.service.enabled=true
 
 # Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -337,6 +343,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
+# Google Assistant
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.opa.eligible_device=true
+
 # Disable rescue party
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
@@ -349,3 +359,9 @@ include vendor/six/config/bootanimation.mk
 
 # Version
 include vendor/six/config/version.mk
+
+# Miracast Support
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
+
