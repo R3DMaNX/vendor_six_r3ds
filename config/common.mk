@@ -141,7 +141,8 @@ PRODUCT_PACKAGES += \
     Stk \
     Terminal \
     WallpaperPickerGooglePrebuilt \
-    WeatherProvider
+    WeatherProvider \
+    WellbeingPrebuilt
 
 # Custom Fonts
 PRODUCT_PACKAGES += \
