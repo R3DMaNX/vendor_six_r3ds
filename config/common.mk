@@ -44,9 +44,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.ringtone=The_big_adventure.ogg \
-    ro.config.notification_sound=Ping.ogg \
-    ro.config.alarm_alert=Spokes.ogg
+    ro.config.ringtone=R2D2Ring.ogg \
+    ro.config.notification_sound=AlarmedSputter.ogg \
+    ro.config.alarm_alert=Scream.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
@@ -365,4 +365,7 @@ include vendor/six/config/version.mk
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
+
+# Google sounds
+include vendor/six/google/GoogleAudio.mk
 
