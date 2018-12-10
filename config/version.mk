@@ -1,5 +1,5 @@
 # Versioning System
-SIX_BASE_VERSION = pie-v1.0
+SIX_BASE_VERSION = pie-v1.1
 
 ifndef SIX_BUILD_TYPE
     SIX_BUILD_TYPE := R3Ds
