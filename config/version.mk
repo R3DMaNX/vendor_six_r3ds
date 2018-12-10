@@ -6,9 +6,9 @@ ifndef SIX_BUILD_TYPE
 endif
 
 # Only include SiX OTA for official builds
-#ifeq ($(filter-out Official,$(SIX_BUILD_TYPE)),)
+#ifeq ($(filter-out R3Ds,$(SIX_BUILD_TYPE)),)
 #    PRODUCT_PACKAGES += \
-#        Updates
+#        SixOTA
 #endif
 
 TARGET_PRODUCT_SHORT := $(subst sixrom_,,$(SIX_BUILD_TYPE))
