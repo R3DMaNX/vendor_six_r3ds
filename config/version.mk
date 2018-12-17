@@ -5,11 +5,11 @@ ifndef SIX_BUILD_TYPE
     SIX_BUILD_TYPE := R3Ds
 endif
 
-# Only include SiX OTA for official builds
-#ifeq ($(filter-out R3Ds,$(SIX_BUILD_TYPE)),)
-#    PRODUCT_PACKAGES += \
-#        SixOTA
-#endif
+# Only include Six Updates for official builds
+ifeq ($(filter-out R3Ds,$(SIX_BUILD_TYPE)),)
+    PRODUCT_PACKAGES += \
+        SixUpdates
+endif
 
 TARGET_PRODUCT_SHORT := $(subst sixrom_,,$(SIX_BUILD_TYPE))
 
