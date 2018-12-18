@@ -129,7 +129,7 @@ PRODUCT_COPY_FILES += \
     vendor/six/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
-# SiX Packages
+# Six Packages
 PRODUCT_PACKAGES += \
     Calculator \
     DeskClock \
@@ -144,9 +144,9 @@ PRODUCT_PACKAGES += \
     WeatherProvider \
     WellbeingPrebuilt
 
-# Custom Fonts
+# Six Fonts
 PRODUCT_PACKAGES += \
-    Havoc-Fonts
+    Six-Fonts
 
 # WeatherProvider
 PRODUCT_COPY_FILES += \
