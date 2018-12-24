@@ -142,9 +142,9 @@ PRODUCT_PACKAGES += \
     Terminal \
     WallpaperPickerGooglePrebuilt \
     WeatherProvider \
-    WellbeingPrebuilt \
-    Substratum \
-    SixPie
+    WellbeingPrebuilt
+    #Substratum
+    #SixPie
 
 # Six Fonts
 PRODUCT_PACKAGES += \
