@@ -19,8 +19,8 @@
 <resources>
 
     <!-- Accent -->
-    <color name="accent_device_default_700">#ff58427c</color>
-    <color name="accent_device_default_light">#ff58427c</color>
-    <color name="accent_device_default_dark">#ff58427c</color>
+    <color name="accent_device_default_700">#fff77f00</color>
+    <color name="accent_device_default_light">#fff77f00</color>
+    <color name="accent_device_default_dark">#fff77f00</color>
 
 </resources>
