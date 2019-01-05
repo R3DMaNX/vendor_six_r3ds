@@ -6,25 +6,22 @@ EXCLUDE_SYSTEMUI_TESTS := true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     keyguard.no_require_sim=true \
+    dalvik.vm.debug.alloc=0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
-    ro.com.google.clientidbase=android-google \
-    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.error.receiver.system.apps=com.google.android.gms \
     ro.setupwizard.enterprise_mode=1 \
-    ro.setupwizard.network_required=false \
-    ro.setupwizard.gservices_delay=-1 \
     ro.com.android.dataroaming=false \
-    ro.adb.secure=0 \
-    ro.build.selinux=1 \
     ro.setupwizard.rotation_locked=true \
-    persist.sys.disable_rescue=true
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     ro.secure=0 \
     persist.service.adb.enable=1 \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp,adb \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.build.selinux=1 \
+    ro.carrier=unknown
 
 PRODUCT_PROPERTY_OVERRIDES := \
     persist.sys.wfd.nohdcp=1 \
@@ -86,9 +83,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/six/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
-# Copy all six-specific init rc files
+# Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/six/prebuilt/common/etc/init.local.rc:root/init.six.rc
+    vendor/six/prebuilt/common/etc/mkshrc:system/etc/mkshrc
+
+# Copy all six-specific init rc files
+$(foreach f,$(wildcard vendor/six/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -112,7 +113,7 @@ PRODUCT_COPY_FILES += \
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/six/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/six/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
@@ -122,10 +123,11 @@ PRODUCT_PACKAGES += \
 # Latin IME lib
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/six/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+    vendor/six/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
     vendor/six/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
+    vendor/six/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
     vendor/six/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
