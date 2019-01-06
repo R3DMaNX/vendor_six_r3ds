@@ -71,6 +71,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/six/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/six/config/permissions/six-power-whitelist.xml:system/etc/sysconfig/six-power-whitelist.xml
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/six/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
