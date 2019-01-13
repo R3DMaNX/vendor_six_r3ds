@@ -144,7 +144,8 @@ PRODUCT_PACKAGES += \
     WallpaperPickerGooglePrebuilt \
     WeatherProvider \
     WellbeingPrebuilt \
-    Eleven
+    Eleven \
+    Jelly
     #Substratum
     #SixPie
 
