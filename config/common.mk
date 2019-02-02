@@ -137,6 +137,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker\
     messaging \
+    OmniStyle \
     PixelLauncher \
     SoundPickerPrebuilt \
     Stk \
